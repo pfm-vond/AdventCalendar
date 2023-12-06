@@ -148,8 +148,6 @@
 
             Console.WriteLine("Day 3 - FirstHalf : " + givenExempleD3.SolutionNumber);
             Console.WriteLine("Day 3 - SecondHalf : " + givenExempleD3.GearRatio);
-
-            Console.ReadLine();
         }
     }
 }
