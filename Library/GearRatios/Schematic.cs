@@ -39,7 +39,7 @@ namespace WeatherMachine.Library.GearRatios
             }
         }
 
-        public void AddGearCandidate(int line, int pos)
+        public void ConsiderGearCandidate(int line, int pos)
         {
             var neibouringPart = Parts.Where(p => p.IsNextTo(line, pos)).ToList();
             if (neibouringPart.Count() == 2)
@@ -48,19 +48,19 @@ namespace WeatherMachine.Library.GearRatios
             }
         }
 
-        public void SetAdjacentToPartNumber(int line, int pos)
+        public void SetAdjacentElementToPart(int line, int pos)
         {
-            for (int l = line - 1; l <= line + 1; l++)
-                for (int p = pos - 1; p <= pos + 1; p++)
+            for (int neigbouringLine = line - 1; neigbouringLine <= line + 1; neigbouringLine++)
+                for (int neibouringPos = pos - 1; neibouringPos <= pos + 1; neibouringPos++)
                 {
-                    if(HasValue(l, p, out SchematicElement value))
+                    if(HasElement(neigbouringLine, neibouringPos, out SchematicElement value))
                     {
                         Parts.Add(value);
                     }
                 }
         }
 
-        private bool HasValue(int l, int p, out SchematicElement value)
+        private bool HasElement(int l, int p, out SchematicElement value)
         {
             bool Fail(out SchematicElement value)
             {

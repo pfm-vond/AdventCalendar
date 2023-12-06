@@ -55,23 +55,24 @@ namespace WeatherMachine.Library.GearRatios
                         }
                     }
                 }
-            }
-            
-            if (ReadingApart)
-            {
-                int partNumber = int.Parse(part.ToString());
-                schematic.Add(partNumber, linePart, posPart);
-                part.Clear();
-            }
+
+                if (ReadingApart)
+                {
+                    ReadingApart = false;
+                    int partNumber = int.Parse(part.ToString());
+                    schematic.Add(partNumber, linePart, posPart);
+                    part.Clear();
+                }
+            }            
 
             foreach (var position in specialChar)
             {
-                schematic.SetAdjacentToPartNumber(position.line, position.pos);
+                schematic.SetAdjacentElementToPart(position.line, position.pos);
             }
 
             foreach (var position in gearCandidate)
             {
-                schematic.AddGearCandidate(position.line, position.pos);
+                schematic.ConsiderGearCandidate(position.line, position.pos);
             }
 
             return schematic;

@@ -17,6 +17,8 @@ namespace calibration.Day3
 ...", 0)]
         [InlineData(@"4..
 .*5", 1)]
+        [InlineData(@"..4
+5*.", 1)]
         [InlineData(@"467..114..
 ...*......
 ..35..633.

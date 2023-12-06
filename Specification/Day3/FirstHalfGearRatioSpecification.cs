@@ -38,7 +38,7 @@ namespace calibration.Day3
             GearRatios.Schematic engine = new GearRatios.Schematic(10, 10);
 
             engine.Add(467, 0, 0);
-            engine.SetAdjacentToPartNumber(1, 3);
+            engine.SetAdjacentElementToPart(1, 3);
 
             engine.PartNumbers.Should().Contain(467);
         }
