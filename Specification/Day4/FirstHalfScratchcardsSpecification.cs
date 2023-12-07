@@ -12,7 +12,7 @@ namespace calibration.Day4
         [Theory]
         [InlineData("Card 1: 41 48 83 86 17 | 83 86  6 31 17  9 48 53", 1)]
         [InlineData("Card 21: 41 48 83 86 17 | 83 86  6 31 17  9 48 53", 21)]
-        [InlineData("Card  1: 41 48 83 86 17 | 83 86  6 31 17  9 48 53", 21)]
+        [InlineData("Card  1: 41 48 83 86 17 | 83 86  6 31 17  9 48 53", 1)]
         public void A_Scratchcards_has_An_id(string textCard,int id)
         {
             Scratchcards.Card card = new Scratchcards.Builder()
