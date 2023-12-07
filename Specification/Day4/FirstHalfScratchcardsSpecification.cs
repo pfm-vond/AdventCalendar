@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text.RegularExpressions;
-using WeatherMachine.Library.Scratchcards;
-using Xunit;
+﻿using System.Linq;
+
 namespace calibration.Day4
 {
     public class FirstHalfScratchcardsSpecification
@@ -118,7 +113,7 @@ Card 5: 87 83 26 28 32 | 88 30 70 12 93 22 82 36
 Card 6: 31 18 13 56 72 | 74 77 10 23 35 67 36 11")
                 .Build();
 
-            pool.Score().Should().Be(13);
+            pool.ScoreAccordingToTheElfHypothesis().Should().Be(13);
         }
     }
 }

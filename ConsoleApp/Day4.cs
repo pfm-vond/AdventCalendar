@@ -208,7 +208,8 @@ Card 200: 86 85 91  2 27 65 45 73 60 69 | 66 26 28  7 98 80 14 52  6 35 57 46 39
 Card 201: 30 53 41 42 10 51 37 63 46 67 | 84 74 33  5 86 32 45 83 52  1 13 43 65 49 98 91  9 11 96 66 15 62 27 44 24")
                 .Build();
 
-            Console.WriteLine("Day 4 - FirstHalf : " + givenExempleDay4.Score()); 
+            Console.WriteLine("Day 4 - FirstHalf : " + givenExempleDay4.ScoreAccordingToTheElfHypothesis());
+            Console.WriteLine("Day 4 - SecondHalf : " + givenExempleDay4.Score());
         }
     }
 }

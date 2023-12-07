@@ -41,9 +41,14 @@ namespace WeatherMachine.Library.Scratchcards
         public int Score()
         {
             if(PlayedWiningNumbers().Any())
-                return 1<<(PlayedWiningNumbers().Count()-1);
+                return 1<<(PlayedWiningCount() - 1);
 
             return 0;
+        }
+
+        public int PlayedWiningCount()
+        {
+            return PlayedWiningNumbers().Count();
         }
     }
 }
