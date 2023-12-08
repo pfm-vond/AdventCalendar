@@ -27,9 +27,9 @@ namespace WeatherMachine.Library.Garden
 
         public Identifier From(Identifier number)
         {
-            if (fromStart <= number && number < fromStart + length)
+            if (fromStart.Value <= number.Value && number.Value < fromStart.Value + length)
             {
-                return new Identifier(Destination, number - fromStart + toStart);
+                return new SingleIdentifier(Destination, number.Value - fromStart.Value + toStart.Value);
             }
 
             return defaultMapping.From(number);

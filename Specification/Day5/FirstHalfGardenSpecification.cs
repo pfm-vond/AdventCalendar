@@ -8,43 +8,43 @@ namespace calibration.Day5
         [Fact]
         public void Any_source_numbers_that_arent_mapped_correspond_to_the_same_destination_number()
         {
-            Garden.Map map = new Garden.Builder()
+            Garden.Map map = new Garden.Builder("seed", "soil")
                 .Build();
 
-            map.From(1).Value.Should().Be(1);
+            map.From(1.Seed()).Value.Should().Be(1);
         }
 
         [Fact]
         public void A_mapping_between_two_range_is_given_by_the_start_of_both_range_and_the_size_of_it()
         {
-            Garden.Map map = new Garden.Builder()
+            Garden.Map map = new Garden.Builder("seed", "soil")
                 .RangeMap(50, 98, 2)
                 .Build();
 
-            map.From(98).Value.Should().Be(50);
-            map.From(99).Value.Should().Be(51);
+            map.From(98.Seed()).Value.Should().Be(50);
+            map.From(99.Seed()).Value.Should().Be(51);
         }
 
         [Fact]
         public void Multiple_mapping_of_this_type_can_be_given()
         {
-            Garden.Map map = new Garden.Builder()
+            Garden.Map map = new Garden.Builder("seed", "soil")
                 .RangeMap(50, 98, 2)
                 .RangeMap(52, 50, 48)
                 .Build();
 
-            map.From(0).Value.Should().Be(0);
-            map.From(1).Value.Should().Be(1);
+            map.From(0.Seed()).Value.Should().Be(0);
+            map.From(1.Seed()).Value.Should().Be(1);
 
-            map.From(48).Value.Should().Be(48);
-            map.From(49).Value.Should().Be(49);
-            map.From(50).Value.Should().Be(52);
-            map.From(51).Value.Should().Be(53);
+            map.From(48.Seed()).Value.Should().Be(48);
+            map.From(49.Seed()).Value.Should().Be(49);
+            map.From(50.Seed()).Value.Should().Be(52);
+            map.From(51.Seed()).Value.Should().Be(53);
 
-            map.From(96).Value.Should().Be(98);
-            map.From(97).Value.Should().Be(99);
-            map.From(98).Value.Should().Be(50);
-            map.From(99).Value.Should().Be(51);
+            map.From(96.Seed()).Value.Should().Be(98);
+            map.From(97.Seed()).Value.Should().Be(99);
+            map.From(98.Seed()).Value.Should().Be(50);
+            map.From(99.Seed()).Value.Should().Be(51);
         }
 
         [Fact]

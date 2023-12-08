@@ -9,7 +9,7 @@
 
         public static Identifier Seed(this long value)
         {
-            return new Identifier("seed", value);
+            return new SingleIdentifier("seed", value);
         }
 
         public static Identifier Soil(this int value)
@@ -19,7 +19,7 @@
 
         public static Identifier Soil(this long value)
         {
-            return new Identifier("soil", value);
+            return new SingleIdentifier("soil", value);
         }
 
         public static Identifier Fertilizer(this int value)
@@ -29,7 +29,7 @@
 
         public static Identifier Fertilizer(this long value)
         {
-            return new Identifier("fertilizer", value);
+            return new SingleIdentifier("fertilizer", value);
         }
 
         public static Identifier Location(this int value)
@@ -39,7 +39,7 @@
 
         public static Identifier Location(this long value)
         {
-            return new Identifier("location", value);
+            return new SingleIdentifier("location", value);
         }
     }
 }

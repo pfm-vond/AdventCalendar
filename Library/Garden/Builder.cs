@@ -23,8 +23,8 @@ namespace WeatherMachine.Library.Garden
         public Builder RangeMap(long toStart, long fromStart, long size)
         {
             map = new RangeMap(
-                new Identifier(map.Origin, fromStart),
-                new Identifier(map.Destination, toStart),
+                new SingleIdentifier(map.Origin, fromStart),
+                new SingleIdentifier(map.Destination, toStart),
                 size,
                 map);
 

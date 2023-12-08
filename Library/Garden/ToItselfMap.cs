@@ -20,7 +20,7 @@ namespace WeatherMachine.Library.Garden
 
         public Identifier From(Identifier id)
         {
-            return new Identifier(Destination, id.Value);
+            return new SingleIdentifier(Destination, id.Value);
         }
     }
 }
