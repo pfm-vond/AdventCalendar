@@ -4,6 +4,7 @@ using System.Collections.Immutable;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WeatherMachine.Library.TextParsing;
 
 namespace WeatherMachine.Library.Scratchcards
 {
@@ -20,7 +21,7 @@ namespace WeatherMachine.Library.Scratchcards
 
         public PoolBuilder FromText(string cardPool)
         {
-            foreach (var line in cardPool.Split(Environment.NewLine))
+            foreach (var line in cardPool.SplitLine())
             {
                 pool.Add(cardBuilder.FromText(line).Build());
             }

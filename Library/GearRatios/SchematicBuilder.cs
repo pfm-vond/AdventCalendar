@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WeatherMachine.Library.TextParsing;
 
 namespace WeatherMachine.Library.GearRatios
 {
@@ -10,7 +11,7 @@ namespace WeatherMachine.Library.GearRatios
     {
         public static Schematic FromText(string text)
         {
-            var lines = text.Split(Environment.NewLine);
+            var lines = text.SplitLine();
 
             var schematic = new Schematic(lines.Length, lines[0].Length);
 

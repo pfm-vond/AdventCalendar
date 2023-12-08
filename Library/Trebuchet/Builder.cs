@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Linq;
+using WeatherMachine.Library.TextParsing;
 
 namespace WeatherMachine.Library.Trebuchet
 {
@@ -10,7 +7,7 @@ namespace WeatherMachine.Library.Trebuchet
     {
         public static CalibrationDocument FromText(string calibrations)
         {
-            var lines = calibrations.Split(Environment.NewLine);
+            var lines = calibrations.SplitLine();
             DigitParser digitParser = new TextDigitParser();
             return new CalibrationValueCollection(
                 lines.Select(l => 
